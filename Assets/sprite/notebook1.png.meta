@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 44ab963683b7bf9478632fe1c867df44
+guid: ab317988769974447a0ce1c05fb2bc43
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7731367015734202164
-    second: lobby 1_0
+      213: 3876899080843853636
+    second: notebook1_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -126,12 +126,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: lobby 1_0
+      name: notebook1_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 2752
+        width: 2730
         height: 1536
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -141,8 +141,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 43f420996555b4b60800000000000000
-      internalID: 7731367015734202164
+      spriteID: 44f7cbf5c238dc530800000000000000
+      internalID: 3876899080843853636
       vertices: []
       indices: 
       edges: []
@@ -161,7 +161,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      lobby 1_0: 7731367015734202164
+      notebook1_0: 3876899080843853636
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
