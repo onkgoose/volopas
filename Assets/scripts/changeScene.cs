@@ -1,49 +1,14 @@
 using UnityEngine;
-using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
-public class NotebookController : MonoBehaviour
+public class SceneLoader : MonoBehaviour
 {
-    [Header("UI Elements")]
-    [SerializeField] private Image pageDisplay;
-    [SerializeField] private Button backButton;
-    [SerializeField] private Button nextButton;
-    [Header("Pages")]
-    [SerializeField] private Sprite[] pageSprites;
-
-    private int _currentPage;
-
-    private void Start()
+    [SerializeField] private string sceneName;
+    public void LoadTargetScene()
     {
-        _currentPage = 0;
-        UpdatePage();
-    }
-
-    public void NextPage()
-    {
-        if (_currentPage < pageSprites.Length - 1)
+        if (!string.IsNullOrEmpty(sceneName))
         {
-            _currentPage++;
-            UpdatePage();
+            SceneManager.LoadScene(sceneName);
         }
-    }
-
-    public void PrevPage()
-    {
-        if (_currentPage > 0)
-        {
-            _currentPage--;
-            UpdatePage();
-        }
-    }
-
-    private void UpdatePage()
-    {
-        if (pageSprites == null || pageSprites.Length == 0) return;
-        pageDisplay.sprite = pageSprites[_currentPage];
-        if (backButton != null)
-            backButton.interactable = (_currentPage > 0);
-
-        if (nextButton != null)
-            nextButton.interactable = (_currentPage < pageSprites.Length - 1);
     }
 }

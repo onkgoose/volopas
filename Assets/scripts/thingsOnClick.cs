@@ -1,12 +1,13 @@
 using System.Collections.Generic;
 using UnityEngine;
-using TMPro; // Если используется TextMeshPro
+using UnityEngine.UI;
+using TMPro;
 
-public class ResearchDialogSystem : MonoBehaviour
+public class thingsOnClick : MonoBehaviour
 {
     [Header("points")]
     [SerializeField] private int pointsPerClick = 10;
-    public static int _researchPoints = 0;
+    public static int points = 0;
 
     [Header("panel")]
     [SerializeField] private GameObject dialogPanel;
@@ -18,10 +19,10 @@ public class ResearchDialogSystem : MonoBehaviour
 
     private int _currentMessageIndex = -1;
     private bool _isDialogOpen = false;
+    private bool _isUsed = false;
 
     private void Start()
     {
-
         if (dialogPanel != null)
             dialogPanel.SetActive(false);
     }
@@ -36,7 +37,14 @@ public class ResearchDialogSystem : MonoBehaviour
 
     public void OnResearchButtonClick()
     {
-        _researchPoints += pointsPerClick;
+        if (_isUsed) return;
+        _isUsed = true;
+        if (TryGetComponent<Button>(out var button))
+        {
+            button.interactable = false;
+        }
+
+        points += pointsPerClick;
 
         if (!_isDialogOpen && messagesToShow != null && messagesToShow.Count > 0)
         {
