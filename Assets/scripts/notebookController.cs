@@ -1,14 +1,15 @@
-using System;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 [System.Serializable]
 public class NotebookPageData
 {
-    public Sprite unlockedSprite; 
-    public Sprite lockedSprite;   
-    public int unlockCost = 5;    
-    public bool isUnlocked = false; 
+    public Sprite unlockedSprite;
+    public Sprite lockedSprite;
+    public int unlockCost = 5;
+    [Tooltip("Если true, страница открыта изначально")]
+    public bool isUnlockedByDefault = false;
 }
 
 public class notebookController : MonoBehaviour
@@ -22,7 +23,26 @@ public class notebookController : MonoBehaviour
     [Header("Pages Configuration")]
     [SerializeField] private NotebookPageData[] pages;
 
+    // Статическое хранилище разблокированных индексов страниц (живет между сценами)
+    private static HashSet<int> _unlockedPageIndices = new HashSet<int>();
+    private static bool _isInitialized = false;
+
     private int _currentPage = 0;
+
+    private void Awake()
+    {
+        if (!_isInitialized)
+        {
+            for (int i = 0; i < pages.Length; i++)
+            {
+                if (pages[i].isUnlockedByDefault)
+                {
+                    _unlockedPageIndices.Add(i);
+                }
+            }
+            _isInitialized = true;
+        }
+    }
 
     private void Start()
     {
@@ -56,13 +76,15 @@ public class notebookController : MonoBehaviour
     {
         if (pages == null || pages.Length == 0) return;
 
+        bool isUnlocked = _unlockedPageIndices.Contains(_currentPage);
         NotebookPageData page = pages[_currentPage];
 
-        if (!page.isUnlocked && thingsOnClick.points >= page.unlockCost)
+        if (!isUnlocked && thingsOnClick.points >= page.unlockCost)
         {
             thingsOnClick.points -= page.unlockCost;
 
-            page.isUnlocked = true;
+            _unlockedPageIndices.Add(_currentPage);
+
             UpdatePageUI();
         }
     }
@@ -71,21 +93,19 @@ public class notebookController : MonoBehaviour
     {
         if (pages == null || pages.Length == 0) return;
 
+        bool isUnlocked = _unlockedPageIndices.Contains(_currentPage);
         NotebookPageData page = pages[_currentPage];
 
-        // 1. Устанавливаем нужный спрайт в зависимости от статуса
         if (pageDisplay != null)
         {
-            pageDisplay.sprite = page.isUnlocked ? page.unlockedSprite : page.lockedSprite;
+            pageDisplay.sprite = isUnlocked ? page.unlockedSprite : page.lockedSprite;
         }
 
-        // 2. Показываем кнопку разблокировки ТОЛЬКО если страница заблокирована
         if (unlockButton != null)
         {
-            unlockButton.gameObject.SetActive(!page.isUnlocked);
+            unlockButton.gameObject.SetActive(!isUnlocked);
         }
 
-        // 3. Управление интерактивностью стрелок перелистывания
         if (prevButton != null)
             prevButton.interactable = (_currentPage > 0);
 

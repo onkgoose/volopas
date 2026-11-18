@@ -594,7 +594,7 @@ MonoBehaviour:
     isUnlockedByDefault: 1
   - unlockedSprite: {fileID: -3397994429389296841, guid: 7ba9f0829c574dd4d8899615768a9635, type: 3}
     lockedSprite: {fileID: 3876899080843853636, guid: ab317988769974447a0ce1c05fb2bc43, type: 3}
-    unlockCost: 1
+    unlockCost: 6
     isUnlockedByDefault: 0
 --- !u!1 &1024743180
 GameObject:
@@ -653,10 +653,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: exit
+  m_text: "\u043E\u0431\u0440\u0430\u0442\u043D\u043E"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: bc5984c5ce3c25f49af46f3c4635ead0, type: 2}
+  m_sharedMaterial: {fileID: -833680588814514170, guid: bc5984c5ce3c25f49af46f3c4635ead0, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -680,8 +680,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 20
+  m_fontSizeBase: 20
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -790,10 +790,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u0440\u0430\u0437\u0431\u043B\u043E\u043A"
+  m_text: "\u043D\u0430\u043F\u0438\u0441\u0430\u0442\u044C"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 311448672d7edb84c8f0e3dac7fc674a, type: 2}
-  m_sharedMaterial: {fileID: 7488384800640400085, guid: 311448672d7edb84c8f0e3dac7fc674a, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: bc5984c5ce3c25f49af46f3c4635ead0, type: 2}
+  m_sharedMaterial: {fileID: -833680588814514170, guid: bc5984c5ce3c25f49af46f3c4635ead0, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -817,8 +817,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 19
+  m_fontSizeBase: 19
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -986,7 +986,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -40, y: 205.93}
+  m_AnchoredPosition: {x: -341, y: 155}
   m_SizeDelta: {x: 98.4913, y: 19.292}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1195291272
@@ -1058,7 +1058,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 0.6039216, g: 0.8078432, b: 0.9176471, a: 1}
+  m_Color: {r: 0.98878974, g: 0.8132075, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1264,8 +1264,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 96, y: 205.93}
-  m_SizeDelta: {x: 130.248, y: 19.292}
+  m_AnchoredPosition: {x: -341.15793, y: 130}
+  m_SizeDelta: {x: 101.9321, y: 19.292}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2105801265
 MonoBehaviour:
@@ -1324,7 +1324,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 0.5764706, g: 0.77647066, b: 0.882353, a: 1}
+  m_Color: {r: 1, g: 0.8283019, b: 0.9871855, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
